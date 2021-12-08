@@ -1,6 +1,6 @@
 from django.http.response import HttpResponseNotFound
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 monthly_challenges ={
     "january":"Earn AWS Certification",
@@ -19,9 +19,17 @@ monthly_challenges ={
 
 # Create your views here.
 
+# handles months in integers
 def monthly_challenge_by_numbers(request, month):
-    return HttpResponse(month)
+    months = list(monthly_challenges.keys()) # Converts the monthly_challenges dictionary above to a list
 
+    if month > len(months):
+        return HttpResponseNotFound("This Month is Not Supported")
+
+    forward_month = months[month -1]
+    return HttpResponseRedirect('/challenges/'+ forward_month)
+
+# handles months in strings
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
