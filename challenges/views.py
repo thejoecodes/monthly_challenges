@@ -4,6 +4,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+def monthly_challenge_by_numbers(request, month):
+    return HttpResponse(month)
+
 def monthly_challenge(request, month):
     challenge_text = None
     if month == 'january':
