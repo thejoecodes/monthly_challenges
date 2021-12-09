@@ -1,6 +1,7 @@
 from django.http.response import HttpResponseNotFound
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls.base import reverse
 
 monthly_challenges ={
     "january":"Earn AWS Certification",
@@ -27,7 +28,8 @@ def monthly_challenge_by_numbers(request, month):
         return HttpResponseNotFound("This Month is Not Supported")
 
     forward_month = months[month -1]
-    return HttpResponseRedirect('/challenges/'+ forward_month)
+    forward_path = reverse('month-challenge',args=[forward_month])
+    return HttpResponseRedirect(forward_path)
 
 # handles months in strings
 def monthly_challenge(request, month):
