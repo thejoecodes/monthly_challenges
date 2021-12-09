@@ -20,6 +20,20 @@ monthly_challenges ={
 
 # Create your views here.
 
+# Creates an unordered list of months
+def index(request):
+    list_items = " "
+    months = list(monthly_challenges.keys())
+
+    for month in months:
+        capitalized_month = month.capitalize() #Capitalize the first letter of the month
+        month_path = reverse('monthly-challenge', args=[month])
+        list_items += f"<li><a href=\"{month_path}\">{capitalized_month}</a></li>"
+    
+    response_data = f"<ul><h2>{list_items}</h2></ul>"
+    return HttpResponse(response_data)
+
+
 # handles months in integers
 def monthly_challenge_by_numbers(request, month):
     months = list(monthly_challenges.keys()) # Converts the monthly_challenges dictionary above to a list
