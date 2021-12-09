@@ -25,7 +25,7 @@ def monthly_challenge_by_numbers(request, month):
     months = list(monthly_challenges.keys()) # Converts the monthly_challenges dictionary above to a list
 
     if month > len(months):
-        return HttpResponseNotFound("This Month is Not Supported")
+        return HttpResponseNotFound("<h1>This Month is Not Supported</h1>")
 
     forward_month = months[month -1]
     forward_path = reverse('monthly-challenge',args=[forward_month])
@@ -35,7 +35,8 @@ def monthly_challenge_by_numbers(request, month):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return HttpResponse(challenge_text)
+        response_data = f"<h1>{challenge_text}</h1>"
+        return HttpResponse(response_data)
     except:
-        return HttpResponseNotFound("This Month is Not Supported")
+        return HttpResponseNotFound("<h1>This Month is Not Supported</h1>")
     
