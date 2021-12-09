@@ -28,7 +28,7 @@ def monthly_challenge_by_numbers(request, month):
         return HttpResponseNotFound("This Month is Not Supported")
 
     forward_month = months[month -1]
-    forward_path = reverse('month-challenge',args=[forward_month])
+    forward_path = reverse('monthly-challenge',args=[forward_month])
     return HttpResponseRedirect(forward_path)
 
 # handles months in strings
