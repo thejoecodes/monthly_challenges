@@ -16,7 +16,7 @@ monthly_challenges ={
     "september":"Create a libary of Data Engineering Resources",
     "october":"Create/Build a Blog Site",
     "november":"Compile thoughts and resources on Data Engineering/Data Science/Django and React",
-    "december": "Write a Comprehensive Review of the Journey from the Monthly Summaries"
+    "december": None #"Write a Comprehensive Review of the Journey from the Monthly Summaries"
 }
 
 # Create your views here.
