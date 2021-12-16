@@ -23,16 +23,13 @@ monthly_challenges ={
 
 # Creates an unordered list of months
 def index(request):
-    list_items = " "
     months = list(monthly_challenges.keys())
 
-    for month in months:
-        capitalized_month = month.capitalize() #Capitalize the first letter of the month
-        month_path = reverse('monthly-challenge', args=[month])
-        list_items += f"<li><a href=\"{month_path}\">{capitalized_month}</a></li>"
+    return render(request, "challenges/index.html",{
+        "months": months
+    })
+
     
-    response_data = f"<ul><h2>{list_items}</h2></ul>"
-    return HttpResponse(response_data)
 
 
 # handles months in integers
