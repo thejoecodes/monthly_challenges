@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ month_name|title }} Challenge 2022</title>
-    </head>
-    <body>
-       <h3>{{ month_name|title }} Challenge is : </h3>
-       {% if text is not None %} 
-       <h4>{{ text }}</h4>
-       {% else %}
+{% extends 'base.html' %}
+
+{% block title_block %}
+    {{ month_name|title }} Challenge 2022
+{% endblock title_block %}
+
+{% block content %}
+    {{ month_name|title }} Challenge is : </h3>
+    {% if text is not None %} 
+        <h4>{{ text }}</h4>
+    {% else %}
        <p>There is no Challenge for {{month_name|title}}</p>
-       {% endif %}
-    </body>
-</html>
+    {% endif %}
+
+{% endblock content %}
+    
+       
+    
