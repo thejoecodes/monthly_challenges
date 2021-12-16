@@ -5,9 +5,11 @@
 {% endblock title_block %}
     
 {% block content %}
+
     <ul>
         {% for month in months %}
             <li><a href="{% url 'monthly-challenge' month %}">{{ month|title }}</li>
         {% endfor %}
     </ul>
+
 {% endblock  %}
