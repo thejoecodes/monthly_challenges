@@ -1,8 +1,7 @@
-from django.http.response import HttpResponseNotFound
+from django.http.response import Http404, HttpResponseNotFound
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls.base import reverse
-from django.template.loader import render_to_string
 
 monthly_challenges ={
     "january":"Earn AWS Certification",
@@ -53,5 +52,5 @@ def monthly_challenge(request, month):
             "month_name": month
         })
     except:
-        return HttpResponseNotFound("<h1>This Month is Not Supported</h1>")
+        raise Http404()
     
