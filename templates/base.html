@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <title>{% block title_block %} My Challenges {% endblock title_block %}</title>
+        <link rel="stylesheet" href="{% static "styles.css" %}">
         {% block css_files %}{% endblock css_files %}
     </head>
     <body>
