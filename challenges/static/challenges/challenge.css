@@ -7,15 +7,25 @@
 body{
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    background-color: #a4c5c6;
     }
+
+h2,h3,p{
+    font-weight: bold;
+}
+
 h3{
     font-size: 1.5rem;
-    font-weight: bold;
+    
 }
 
 h2{
     font-size: 3rem;
-    font-weight: bold;
+
+}
+
+p{
+    font-size: 3rem;
 }
 
 a:link {
