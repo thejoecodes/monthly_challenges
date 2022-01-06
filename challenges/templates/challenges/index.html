@@ -3,13 +3,12 @@
 {% load static %}
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static "Challenges/challenges.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
 {% endblock css_files %}
 
-{% block title_block %}
-    All Challenges 2022
-{% endblock %}
-    
+{% block header_block %}<h1>All Challenges 2022</h1>{% endblock header_block %}
+     
 {% block content %}
 
     <ul>

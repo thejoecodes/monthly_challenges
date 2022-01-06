@@ -2,12 +2,13 @@
 {% load static %}
 <html>
     <head>
-        <title></title>
+        <title>{% block title_block %} My Challenges {% endblock title_block %}</title>
         <link rel="stylesheet" href="{% static "styles.css" %}">
         {% block css_files %}{% endblock css_files %}
+        {% block header_block %}{% endblock header_block %}
     </head>
     <body>
-       {% block title_block %} My Challenges {% endblock title_block %}
+       
        {% block content %}
        
        {% endblock content %}
